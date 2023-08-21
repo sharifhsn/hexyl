@@ -640,6 +640,7 @@ impl<'a, Writer: Write> Printer<'a, Writer> {
                 self.print_char_panel()?;
             }
             self.writer.write_all(b"\n")?;
+            self.writer.flush()?;
 
             // increment index to next line
             self.idx += 8 * self.panels;
